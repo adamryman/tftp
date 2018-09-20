@@ -26,7 +26,8 @@ func main() {
 }
 
 func handlePacket(pc net.PacketConn, data []byte, addr net.Addr) {
-	fmt.Printf("%x\n", data)
+	fmt.Printf("Optcode: %x\n", data[0:2])
+	fmt.Printf("%x\n", data[2:])
 	fmt.Println()
-	fmt.Printf("%s", addr.String())
+	fmt.Printf("%s\n", addr.String())
 }
